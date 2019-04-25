@@ -1,4 +1,4 @@
-{% set version = '1.0.0' %}
+{% set version = '2.0.1' %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -11,7 +11,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/zip_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/zip/zip_{{ version }}.tar.gz
-  sha256: 6fa9ec7b093b8c717c50f205d4335c31c43c2ecb51c0242c9a0337d8d84df965
+  sha256: 216a6fd02c289641502e42d6fe1bc8bf97199f7bbce164493e1f0b2dee5f9031
 
 build:
   merge_build_host: True  # [win]
@@ -23,7 +23,7 @@ build:
     - lib/R/lib/
     - lib/
 
-# Suggests: covr, testthat, withr
+# Suggests: covr, processx, R6, testthat, withr
 requirements:
   build:
     - {{ compiler('c') }}        # [not win]
@@ -54,7 +54,7 @@ test:
     # Put any additional test requirements here.
 
 about:
-  home: https://github.com/gaborcsardi/zip
+  home: https://github.com/r-lib/zip#readme
   license: CC0
   summary: Cross-Platform 'zip' Compression Library. A replacement for the 'zip' function, that
     does not require any additional external tools on any platform.
@@ -73,21 +73,21 @@ extra:
 
 # Package: zip
 # Title: Cross-Platform 'zip' Compression
-# Version: 1.0.0
+# Version: 2.0.1
 # Author: Gabor Csardi, Kuba Podgorski, Rich Geldreich
 # Maintainer: Gabor Csardi <csardi.gabor@gmail.com>
 # Description: Cross-Platform 'zip' Compression Library. A replacement for the 'zip' function, that does not require any additional external tools on any platform.
 # License: CC0
 # LazyData: true
-# URL: https://github.com/gaborcsardi/zip
-# BugReports: https://github.com/gaborcsardi/zip/issues
-# RoxygenNote: 6.0.1
-# Suggests: covr, testthat, withr
+# URL: https://github.com/r-lib/zip#readme
+# BugReports: https://github.com/r-lib/zip/issues
+# RoxygenNote: 6.1.1
+# Suggests: covr, processx, R6, testthat, withr
 # Encoding: UTF-8
 # NeedsCompilation: yes
-# Packaged: 2017-04-25 10:54:02 UTC; gaborcsardi
+# Packaged: 2019-03-11 17:58:47 UTC; gaborcsardi
 # Repository: CRAN
-# Date/Publication: 2017-04-25 14:36:39 UTC
+# Date/Publication: 2019-03-11 18:20:03 UTC
 
 # See
 # http://docs.continuum.io/conda/build.html for
